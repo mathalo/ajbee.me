@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>React JS Demo #1</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="js/react.min.js" type="text/javascript"></script>
+        <script src="js/react-dom.min.js" type="text/javascript"></script>
+        <script src="js/babel.min.js" type="text/javascript"></script>
+    </head>
+    <body>
+        <div id="content"></div>
+        <script type="text/babel">
+            // HelloCard
+            //   + HelloTitle
+            //   + HelloAddress
+            var HelloTitle = React.createClass({
+                render: function(){
+                    return(
+                          <h1>AjBee.Me</h1>
+                    );
+                }
+            });
+
+            var HelloAddress = React.createClass({
+                render: function(){
+                    return(
+                          <div>
+                           <div>Vittayask Rujivorakul</div>
+                           <div>http://ajbee.me</div>
+                          </div>
+                    );
+                }
+            });
+
+            var HelloCard = React.createClass({
+                render: function(){
+                    return(
+                          <div>
+                            <HelloTitle/>
+                            <HelloAddress/>
+                          </div>
+                    );
+                }
+            });
+
+              var HelloList = React.createClass({
+                render: function(){
+                    return(
+                          <div className="helloList">
+                            <HelloCard/>
+                            <HelloCard/>
+                            <HelloCard/>
+                          </div>
+                    );
+                }
+            });
+
+            ReactDOM.render(<HelloList/>,
+                    document.getElementById("content"));
+        </script>
+
+    </body>
+</html>
